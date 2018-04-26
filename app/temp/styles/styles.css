@@ -1,0 +1,7 @@
+body {
+	color: #2f5572;
+	padding: 20px;
+	margin: 10px;
+	-moz-columns: 300px 2;
+	     columns: 300px 2;
+}
