@@ -1,23 +1,14 @@
 const path = require('path');
 
 module.exports = {
-	entry: './app/assets/scripts/App.js',
+	entry: {
+		App: './app/assets/scripts/App.js',
+		Vendor: './app/assets/scripts/Vendor.js'
+	},
 	output: {
 		path: path.join(__dirname, 'app', 'temp', 'scripts'),
-		filename: 'bundle.js'
+		filename: '[name].js'
 	},
-	// module: {
-	// 	loaders: [
-	// 		{
-	// 			loader: 'babel-loader',
-	// 			query: {
-	// 				presets: ['es2015']
-	// 			},
-	// 			test: /\.js$/,
-	// 			exclude: /node_modules/
-	// 		}
-	// 	]
-	// }
 	module: {
 		rules: [
 			{
@@ -31,9 +22,9 @@ module.exports = {
 				exclude: /node_modules/
 			}
 		]
-	},
-	resolveLoader: {
-		modules: ['node_modules', __dirname + '/client/node_modules'],
-		moduleExtensions: ['-loader']
 	}
+	// resolveLoader: {
+	// 	modules: ['node_modules', __dirname + '/client/node_modules'],
+	// 	moduleExtensions: ['-loader']
+	// }
 };
